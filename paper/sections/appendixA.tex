@@ -1,0 +1,61 @@
+\section*{Appendix A: Fixed-point and stability analysis}
+
+The fixed points for the coupled system defined by Eqs.~\eqref{eq:ydot} and \eqref{eq:Edot} satisfy $\dot y=0$ and $\dot E=0$ simultaneously. From $\dot E=0$ we obtain the environmental nullcline
+\begin{equation}
+E=\frac{\alpha}{\beta}\,y.
+\label{eq:Enull}
+\end{equation}
+Substituting \eqref{eq:Enull} into $\dot y=0$ yields the three equilibria
+\begin{equation}
+(y_0,E_0)=(0,0), \qquad (y_1,E_1)=(1,\alpha/\beta), \qquad 
+(y^*,E^*)=\left(\frac{p_c}{p_{\mathrm{eff}}},\,\frac{\alpha}{\beta}\frac{p_c}{p_{\mathrm{eff}}}\right),
+\label{eq:persistent_equilibria}
+\end{equation}
+where
+\begin{equation}
+p_c=c+1-s, \qquad p_{\mathrm{eff}}=\frac{p\alpha}{\beta}.
+\label{eq:thresholds}
+\end{equation}
+The interior equilibrium exists in the admissible region only when $0<y^*<1$, or what is the same, when $p_{\mathrm{eff}}>p_c$.
+
+Linear stability is determined from the Jacobian of the two‑dimensional flow,
+\begin{equation}
+J(y,E) =
+\begin{pmatrix}
+(1-2y)\bigl(s - c + pE - 1\bigr) & p\,y(1-y) \\
+\alpha & -\beta
+\end{pmatrix}.
+\label{eq:persistent_J}
+\end{equation}
+
+Evaluating \eqref{eq:persistent_J} at the boundary equilibria in \eqref{eq:persistent_equilibria} and using Eq.\eqref{eq:thresholds}, gives
+
+\begin{equation}
+J(0,0)=
+\begin{pmatrix}
+-p_c & 0 \\
+\alpha & -\beta
+\end{pmatrix},
+\qquad
+J(1,\alpha/\beta)=
+\begin{pmatrix}
+p_c - p_{\mathrm{eff}} & 0 \\
+\alpha & -\beta
+\end{pmatrix},
+\label{eq:persistent_J_boundaries_simp}
+\end{equation}
+
+Hence $(y_0,E_0)=(0,0)$ is stable whenever $p_c>0$, and $(y_1,E_1)=(1,\alpha/\beta)$ is stable when $p_{\mathrm{eff}}>p_c$.
+
+At the interior equilibrium $(y^*,E^*)$, direct evaluation of the trace and determinant shows that
+\[
+\det J(y^*,E^*)=-\alpha\,p\,y^*(1-y^*)<0,
+\]
+whenever it exists. The determinant is therefore always negative in the admissible regime, implying one positive and one negative eigenvalue and confirming that $(y^*,E^*)$ is a saddle point.
+
+% \vspace{8pt}
+% \noindent\textbf{Proposition (Stability of the persistent‑feedback model).}
+% \emph{
+% For $p_{\mathrm{eff}}<p_c$, the rule‑taking equilibrium $(0,0)$ is globally attracting in the admissible region.
+% For $p_{\mathrm{eff}}>p_c$, the system is bistable, with two locally stable equilibria at $(0,0)$ and $(1,\alpha/\beta)$ separated by a saddle at $(y^*,E^*)$ given in \eqref{eq:persistent_equilibria}.
+% }

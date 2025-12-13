@@ -1,0 +1,53 @@
+\section{Model}
+
+We consider a well-mixed population composed of two types of chemical replicators: rule‑takers ($R$), which reproduce under external physicochemical conditions they do not modify, and rule‑makers ($M$), which incur a cost to alter those conditions (Fig.~\ref{fig:concept-cartoon}). Let $y$ denote the frequency of rule‑makers and $1-y$ the frequency of rule‑takers (implicitly assuming that the total population is regulated on a faster timescale than changes in composition, as in chemostat-like or dilution-balanced settings). 
+
+The local environment is represented by a scalar variable $E$, which acts as a coarse‑grained descriptor of catalytic, buffering, or stabilizing factors that influence replication rates. The variable $E$ is shared by both types, with rule‑makers increasing it while paying a cost, and rule‑takers benefiting from it without contributing to its production. Rule‑makers are thus the source of environmental change, and the resulting environmental state feeds back on replication. 
+
+Each chemical species replicates at a per‑capita rate, denoted by a fitness $\pi$, which determines its rate of increase. Rule‑maker fitness includes three components—a baseline performance $s$ relative to rule‑takers, a cost $c>0$ for modifying the environment, and a feedback benefit $pE$ that increases with environmental quality. Thus,
+
+\begin{equation}
+\pi_M = s - c + pE, \qquad \pi_R = 1,
+\label{eq:piM}
+\end{equation}
+
+where the rule‑taker’s fitness is normalized to unity.
+
+Under the replicator equation, the frequency of rule-makers changes according to
+
+\begin{equation}
+\dot y = y(\pi_M - \bar\pi),
+\label{eq:doty}
+\end{equation}
+
+where the mean fitness is
+
+\begin{equation}
+\bar\pi = y\pi_M + (1-y)\pi_R.
+\label{eq:barpi}
+\end{equation}
+
+Substituting Eqs.~(\ref{eq:piM}) and ~(\ref{eq:barpi}) into Eq.~(\ref{eq:doty}) gives
+
+\begin{equation}
+\dot y = y(1-y)\bigl(s - c + pE - 1\bigr),
+\label{eq:ydot}
+\end{equation}
+
+a cubic vector field in $y$ whose coupling to the environmental dynamics in $E$ determines the qualitative behaviour of the system.
+
+Environmental conditions evolve according to
+
+\begin{equation}
+\dot E = \alpha y - \beta E,
+\label{eq:Edot}
+\end{equation}
+
+where $\alpha$ quantifies the rate at which rule-makers improve the environment and $\beta$ the rate at which environmental conditions relax back toward baseline. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/concept_cartoon.png}
+\caption{Conceptual illustration of the feedback model. (A) The environment remains tightly coupled to population composition, either because relaxation is fast or because rule‑makers are rare, producing effectively instantaneous feedback. (B) Environmental modification accumulates when relaxation is slow or rule‑makers are sufficiently abundant, allowing changes in environmental quality to persist over the timescale of population dynamics. Both panels represent different parameter regimes of the same underlying dynamical system.}
+\label{fig:concept-cartoon}
+\end{figure}

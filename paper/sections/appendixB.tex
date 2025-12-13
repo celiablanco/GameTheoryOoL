@@ -1,0 +1,43 @@
+\section*{Appendix B: Derivation of the Reduced Replicator–Environment System}
+
+The deterministic mass–action equations for the three variables are
+\begin{align}
+\frac{dR}{dt} &= (k_R S_0 - \mu_R) R, \label{eq:Rdot_app} \\
+\frac{dM}{dt} &= (k_M S_0 - \mu_M + k_{\mathrm{fb}} S_0 B)\, M, \label{eq:Mdot_app} \\
+\frac{dB}{dt} &= \alpha M - \beta B. \label{eq:Bdot_app}
+\end{align}
+The coefficients in front of $R$ and $M$ define the per-capita growth rates
+\[
+\pi_R = k_R S_0 - \mu_R, \qquad
+\pi_M = k_M S_0 - \mu_M + k_{\mathrm{fb}} S_0 B.
+\]
+
+Let $N = R + M$ and $y = M/N$. Differentiating $y$ yields
+\[
+\dot y = \frac{N\,\dot M - M\,\dot N}{N^2}.
+\]
+Using $\dot M = \pi_M M$ and $\dot R = \pi_R R$, we obtain
+\[
+\dot N = \pi_M M + \pi_R R.
+\]
+Substituting into the expression for $\dot y$ and simplifying gives the standard replicator form
+\[
+\dot y = y(1-y)(\pi_M - \pi_R).
+\]
+
+To connect this with the reduced notation in the main text, we rescale time so that $\pi_R = 1$ and define the parameter combinations
+\[
+s - c = k_M S_0 - \mu_M, \qquad
+p = k_{\mathrm{fb}} S_0.
+\]
+Under this rescaling,
+\[
+\dot y = y(1-y)\,\bigl(s - c + pB - 1\bigr),
+\]
+which matches the functional form of Eq.~\eqref{eq:ydot} once we identify the environmental variable as $E \equiv B$.
+
+The environmental dynamics follow directly from \eqref{eq:Bdot_app}. Under chemostat-like conditions the total abundance $N$ remains approximately constant, allowing $M = yN$ and therefore
+\[
+\dot E = \alpha yN - \beta E = \tilde{\alpha}\,y - \beta E,
+\]
+where $\tilde{\alpha} = \alpha N$ is absorbed into the effective production rate. This reproduces the environmental equation used in the main text.

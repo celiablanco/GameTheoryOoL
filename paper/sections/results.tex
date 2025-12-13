@@ -1,0 +1,191 @@
+\section{Results}
+
+\subsection{Stability analysis}
+
+The coupled population-environment system defined by Eqs.~\eqref{eq:ydot} and \eqref{eq:Edot} admits two natural boundary equilibria. The first ($\mathbf{A_1}$) corresponds to extinction of rule-makers, so that the population is entirely rule-taking and the environment remains at its baseline level. The second ($\mathbf{A_2}$) corresponds to full dominance of rule-makers, in which environmental quality is maintained at a steady state set by the balance between production and relaxation. In addition to these boundary states, an interior equilibrium ($\mathbf{S}$) may exist in which rule-takers and rule-makers coexist at fixed frequencies together with a nontrivial environmental state (see Appendix A). These three equilibria are given by
+\[
+\mathbf{A_1} = (0,0), \qquad 
+\mathbf{A_2} = (1,\alpha/\beta), \qquad
+\mathbf{S} = (y_{\mathrm{s}},E_{\mathrm{s}})
+           = \left(\frac{p_c}{p_{\mathrm{eff}}},\,\frac{\alpha}{\beta}\frac{p_c}{p_{\mathrm{eff}}}\right).
+\]
+
+The appearance of the interior equilibrium is governed by the threshold condition
+\[
+p_{\mathrm{eff}} > p_c = c + 1 - s,
+\]-
+where \(c\) is the cost of environmental modification and \(1 - s\) is the baseline disadvantage of the modifying strategy,
+and
+\begin{equation}
+p_{\mathrm{eff}} = p\,\frac{\alpha}{\beta}
+\label{eq:peff}
+\end{equation}
+is the effective strength of feedback relative to environmental decay. 
+
+For $p_{\mathrm{eff}} \le p_c$, the only admissible equilibrium is the rule-taking state $\mathbf{A_1}$, which is globally stable. For $p_{\mathrm{eff}} > p_c$, $\mathbf{A_1}$ and $\mathbf{A_2}$ are both stable, whereas $\mathbf{S}$ is a saddle whose stable manifold forms the separatrix in the $(y,E)$ plane that divides the basins of attraction of the two boundary states (see Appendix A). 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{figures/2D_nullcline.png}
+\caption{Nullcline structure and flow of the population-environment feedback model (Fig.~\ref{fig:concept-cartoon}). Black solid line: environmental nullcline $\dot E=0$ with $E=(\alpha/\beta)y$. Red solid lines: population nullclines $\dot y=0$, including the interior nullcline $E=(1-s+c)/p$ and the invariant boundaries $y=0$ and $y=1$. The fixed points are $\mathbf{A_1}=(0,0)$, $\mathbf{A_2}=(1,2.0)$, and the interior saddle $\mathbf{S}=(y_s,E_s)=(0.1,0.2)$. Gray arrows indicate the normalized direction field. Parameters: $s=1.0$, $c=0.2$, $p=1.0$, $\alpha=1.0$, $\beta=0.5$, giving $p_c=c+1-s=0.2$ and $p_{\mathrm{eff}}=p\alpha/\beta=2.0$.}
+\label{fig:2D_nullclines}
+\end{figure}
+
+The geometry of these coupled dynamics can be visualized through the nullclines and direction field of the $(y,E)$ system, which illustrate how trajectories are guided through phase space (Fig.~\ref{fig:2D_nullclines}). The vector field points toward the environmental nullcline $\dot E = 0$ from both above and below, indicating that it acts as an attracting manifold in the vertical direction. Once close to this curve, further evolution is dominated by changes in the population composition $y$. In other words, deviations of the environmental modifier from its production-decay balance relax automatically, after which the remaining evolution reflects changes in the relative abundance of rule-makers and rule-takers. This two-dimensional population-environment system, in which environmental modification persists over the same timescale as population change, defines what we refer to as the dynamic-environment regime.
+
+Within the bistable region of the dynamic-environment regime, the two boundary attractors are separated in phase space by a curved separatrix in the $(y,E)$ plane, whose geometry determines how initial conditions are partitioned between rule-taking and rule-making outcomes. The boundary between these regimes is linear in $(c, p_{\mathrm{eff}})$ for fixed $s$ (Fig.~\ref{fig:regimes}), reflecting the analytic condition for the appearance of the interior saddle. This linear frontier encodes a direct trade-off between cost and feedback strength. Increasing the energetic or functional cost of rule-making can be compensated by proportionally stronger environmental feedback, thereby preserving bistability. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{figures/regimes.png}
+\caption{Binary phase diagram of dynamical regimes as a function of cost $c$ and effective feedback strength $p_{\mathrm{eff}} = p\alpha/\beta$ for $s=1$. At and below the threshold line $p_{\mathrm{eff}} = p_c$, only the rule-taking equilibrium $\mathbf{A_1}$ exists and is globally stable. Above the line, the system is bistable, with coexistence of the rule-taking equilibrium $\mathbf{A_1}$ and the rule-making equilibrium $\mathbf{A_2}$ separated by the interior saddle $\mathbf{S}$.}
+\label{fig:regimes}
+\end{figure}
+
+Environmental history strongly shapes long-term population outcomes within the bistable regime.
+Fig.  \ref{fig:extended-fan} shows trajectories of the coupled system across a uniform range of initial rule-maker frequencies $y_0$ for two contrasting initial environmental states. When the initial environment is poor ($E_0 = 0$), only sufficiently large initial rule-maker fractions cross the separatrix and approach the rule-making attractor, while smaller populations decay toward the rule-taking state. By contrast, when the environment is initially favorable ($E_0 = 2$), even rare rule-makers reliably grow and invade, and almost all trajectories converge to the rule-making attractor. This demonstrates that pre-existing environmental conditioning can drastically alter the basin structure, lowering the threshold for rule-makers to establish themselves. The same feedback parameters therefore support radically different evolutionary outcomes depending solely on the environmental state from which the system is initialized.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/extended_fan.png}
+\caption{Time evolution of rule-maker frequency $y(t)$ for a uniform range of initial population compositions $y_0$ under two different initial environmental conditions within the bistable regime. (A) Low initial environmental quality (modifier concentration) ($E_0 = 0$). (B) High initial environmental quality ($E_0 = 2$). Parameters: $s=1.0$, $c=0.5$, $p=0.8$, $\alpha=1.0$, $\beta=0.2$, giving $p_c = c + 1 - s = 0.5$ and $p_{\mathrm{eff}} = p\alpha/\beta = 4.0$. For low $E_0$, only sufficiently large initial rule-maker fractions overcome decay and approach the rule-making attractor, whereas for high $E_0$ even initially rare rule-makers reliably invade.}
+\label{fig:extended-fan}
+\end{figure}
+
+\subsection{Quasi-steady environment limit}
+
+To isolate the role of environmental persistence, it is instructive to consider the limit in which
+environmental dynamics are slaved to population composition. In this quasi-steady environment
+limit, deviations of the environmental variable relax rapidly compared to changes in population
+composition, so that the system remains close to the environmental nullcline $\dot E = 0$ throughout
+its evolution. The environmental state is therefore no longer an independent dynamical degree of
+freedom but is approximately determined by the instantaneous rule-maker frequency according to
+\[
+E \approx \frac{\alpha}{\beta}\,y.
+\]
+
+Substituting this quasistatic relation into the population equation~\eqref{eq:ydot}
+reduces the coupled two-dimensional dynamics to an effective one-dimensional replicator
+equation with instantaneous frequency-dependent feedback,
+\[
+\dot y = y(1-y)\bigl(s - c + p_{\mathrm{eff}}\,y - 1\bigr),
+\]
+where $p_{\mathrm{eff}} = p\alpha/\beta$ is the effective feedback strength defined in
+Eq.~\eqref{eq:peff}.
+
+The reduced dynamics admits equilibria at the same values of the rule-maker fraction $y$
+as in the full system: a rule-taking state at $y=0$, a rule-making state at $y=1$, and an
+interior equilibrium at $y = p_c/p_{\mathrm{eff}}$ when $p_{\mathrm{eff}} > p_c = c + 1 - s$.
+However, the phase-space geometry is fundamentally altered. In the quasi-steady environment limit,
+the curved separatrix present in the dynamic-environment case collapses onto a single,
+sharp threshold at $y = y_{\mathrm{s}} = p_c/p_{\mathrm{eff}}$, so that long-term outcomes
+depend exclusively on the initial rule-maker frequency. Trajectories with $y_0 <
+y_{\mathrm{s}}$ converge to the rule-taking state, whereas those with $y_0 >
+y_{\mathrm{s}}$ converge to the rule-making state, independent of the initial
+environmental condition.
+
+The consequences of this reduction are illustrated in
+Fig.~\ref{fig:timeseries_fan}, which shows trajectories of the reduced one-dimensional
+dynamics across a uniform range of initial rule-maker frequencies for effective feedback strengths
+below and above the threshold. For subcritical effective feedback ($p_{\mathrm{eff}} < p_c$), all trajectories
+relax to the rule-taking state. For supercritical effective feedback ($p_{\mathrm{eff}} > p_c$), a sharp threshold
+separates trajectories that decay from those that grow toward the rule-making state.
+Unlike in the dynamic-environment regime analyzed above, environmental history plays no
+role in this limit; only the initial population composition determines the outcome.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/timeseries_fan.png}
+\caption{Dynamics in the quasi-steady environment limit. Time evolution of the rule-maker
+frequency $y(t)$ for a uniform range of initial conditions $y_0$ under the one-dimensional
+reduced dynamics obtained by eliminating the environmental variable via the quasi-steady
+relation $E \approx (\alpha/\beta)y$. (A) Subcritical effective feedback
+($p_{\mathrm{eff}} < p_c$), for which all trajectories converge to the rule-taking state
+$y=0$. (B) Supercritical effective feedback ($p_{\mathrm{eff}} > p_c$), for which a sharp
+threshold at $y = y_{\mathrm{s}} = p_c/p_{\mathrm{eff}}$ separates trajectories that decay
+toward the rule-taking state from those that converge to the rule-making state $y=1$.
+Parameters: $s=1.0$, $c=0.1$, with $p_c = c + 1 - s = 0.1$.}
+\label{fig:timeseries_fan}
+\end{figure}
+
+
+\subsection{Minimal chemical realization of rule-making feedback}
+
+The population-environment feedback model admits a direct realization as a minimal chemical
+reaction network. This construction clarifies how the abstract environmental variable $E$ corresponds
+to a physically meaningful modifier species and shows that the feedback structure encoded in
+Eqs.~\eqref{eq:ydot}-\eqref{eq:Edot} arises naturally from standard mass-action kinetics under
+well-defined assumptions.
+
+We consider four chemical species: a rule-taking replicator $R$, a rule-making replicator $M$, a generic substrate $S$ supplying material or free energy for replication, and an environmental modifier $B$. The modifier $B$ represents any chemical factor produced by $M$ that enhances the local replication
+rate of $M$, for example through catalysis, buffering, metal chelation, or stabilization of reaction
+conditions. The reaction network is defined by the following elementary processes:
+
+\begin{align}
+R + S &\xrightarrow{k_R} 2R, \label{eq:Rrep} \\
+M + S &\xrightarrow{k_M} 2M, \label{eq:Mrep} \\
+M + S + B &\xrightarrow{k_{\mathrm{fb}}} 2M + B, \label{eq:MrepB} \\
+M &\xrightarrow{\alpha} M + B, \label{eq:Bprod} \\
+R &\xrightarrow{\mu_R} \varnothing, \label{eq:Rdecay} \\
+M &\xrightarrow{\mu_M} \varnothing, \label{eq:Mdecay} \\
+B &\xrightarrow{\beta} \varnothing. \label{eq:Bdecay}
+\end{align}
+
+Here, Eqs.~(\ref{eq:Rrep}) and (\ref{eq:Mrep}) describe baseline replication of $R$ and $M$ from a common substrate $S$. Eq.~(\ref{eq:MrepB}) represents enhanced, feedback-mediated replication of $M$ in the presence of the modifier $B$, which acts catalytically and is regenerated in the process. Eq.~(\ref{eq:Bprod}) captures the costly production of the environmental modifier by $M$. Eqs.~(\ref{eq:Rdecay})-(\ref{eq:Bdecay}) describe first-order loss of each species due to degradation, dilution, or outflow.
+
+We assume that the substrate $S$ is maintained at an approximately constant concentration $S_0$ by external supply, as in a chemostat or continuously driven prebiotic reactor. Under this assumption, the mass-action dynamics for the concentrations $R(t)$, $M(t)$ and $B(t)$ take the form
+
+\begin{align}
+\frac{dR}{dt} &= \left(k_R S_0 - \mu_R\right) R, \label{eq:Rdot} \\
+\frac{dM}{dt} &= \left(k_M S_0 - \mu_M + k_{\mathrm{fb}} S_0 B\right) M, \label{eq:Mdot} \\
+\frac{dB}{dt} &= \alpha M - \beta B. \label{eq:Bdot}
+\end{align}
+
+This assumption implies regulation of total replicator abundance on a faster timescale than changes
+in population composition, consistent with the frequency-based formulation used above.
+
+The reaction scheme induces per-capita growth rates
+\[
+\pi_R = k_R S_0 - \mu_R,
+\qquad
+\pi_M = k_M S_0 - \mu_M + k_{\mathrm{fb}} S_0 B,
+\]
+which determine exponential replication rates and correspond directly to the growth coefficients
+used in the population-level description. Writing the dynamics in terms of the
+rule-maker frequency $y = M/(R+M)$ yields the standard replicator form
+\[
+\dot y = y(1-y)\bigl(\pi_M - \pi_R\bigr).
+\]
+Grouping parameters shows that the intrinsic advantage of rule-makers corresponds to 
+$s-c = k_M S_0 - \mu_M$, while the strength of environmental feedback corresponds to 
+$p = k_{\mathrm{fb}} S_0$, with the environmental variable identified chemically as $E \equiv B$.
+Under these identifications the chemical model reduces exactly to Eq.~\eqref{eq:ydot} (see Appendix~B).
+
+Fig.~\ref{fig:chemical-feedback} shows the feedback dynamics expressed as normalized concentrations
+of rule-takers, rule-makers, and modifier species, obtained by integrating
+Eqs.~\eqref{eq:ydot} and \eqref{eq:Edot}. For bistable parameters, these trajectories illustrate the
+same regime structure identified at the population level. When the initial modifier concentration is
+low, modifier decay prevents sustained feedback and the system relaxes to the rule-taking state.
+When the modifier concentration is initially high, feedback between $M$ and $B$ is maintained,
+allowing rule-makers to increase in abundance and stabilize a persistent environmental state.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/chemical_feedback_two_panel.png}
+\caption{Dynamics of a chemically interpreted population-environment feedback model. Time series of normalized concentrations of the rule-taker $R$ (blue), rule-maker $M$ (orange), and modifier $B$ (green) for the bistable parameter set $s=1.0$, $c=0.2$, $p=0.8$, $\alpha=1.0$, and $\beta=0.5$, so that $p_c = c + 1 - s = 0.2$ and $p_{\mathrm{eff}} = p\alpha/\beta = 1.6$. In both panels the initial rule-maker fraction is $y_0 = 0.1$; the two panels differ only in the initial environmental quality. (A): low initial environmental quality ($E_0 = 0$) leads to extinction of rule-makers and decay of the modifier concentration. (B): high initial environmental quality ($E_0 = 1.0$) allows rule-makers to increase in abundance, maintain a positive modifier concentration, and drive the system to the rule-making attractor.}
+\label{fig:chemical-feedback}
+\end{figure}
+
+In this chemically grounded formulation, the environmental variable $E$ corresponds to the
+concentration of a modifier species that is produced by rule-makers at a cost, enhances their own
+replication, and decays on a characteristic timescale $\beta^{-1}$. The effective feedback strength
+$p_{\mathrm{eff}} = p\alpha/\beta$ therefore admits a direct chemical interpretation as the ratio
+between the catalytic enhancement rate of modifier-assisted replication and the lifetime of the
+modifier in the environment.
+
+This minimal reaction network shows explicitly how population-environment feedback can arise from
+chemically plausible processes without invoking preexisting genetic information or complex metabolic
+organization. Environmental modification persists only when supported by sufficient population
+abundance, reproducing the same bistable transition between externally constrained and
+self-stabilizing regimes identified in the population-level analysis.
+
